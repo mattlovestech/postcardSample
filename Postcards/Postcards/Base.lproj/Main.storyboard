@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GJQ-Cn-3dL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GJQ-Cn-3dL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -97,22 +97,22 @@
                                 <rect key="frame" x="8" y="52" width="398" height="385"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ebk-Pj-u4n">
-                                        <rect key="frame" x="54.5" y="0.0" width="289.5" height="59.5"/>
+                                        <rect key="frame" x="58" y="0.0" width="282" height="59.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smallest Undimmed Dentent Identifier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="neu-jt-5H6">
-                                                <rect key="frame" x="0.0" y="0.0" width="289.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Largest Undimmed Dentent Identifier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" autoshrinkMode="minimumScaleFactor" translatesAutoresizingMaskIntoConstraints="NO" id="neu-jt-5H6">
+                                                <rect key="frame" x="0.0" y="0.0" width="282" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yKr-DJ-cFC">
-                                                <rect key="frame" x="72" y="28.5" width="145" height="32"/>
+                                                <rect key="frame" x="68.5" y="28.5" width="145" height="32"/>
                                                 <segments>
                                                     <segment title=".medium"/>
                                                     <segment title=".large"/>
                                                 </segments>
                                                 <connections>
-                                                    <action selector="smallestUndimmedDetentChanged:" destination="vDa-oU-COy" eventType="valueChanged" id="zoj-SJ-eWe"/>
+                                                    <action selector="largestUndimmedDetentChanged:" destination="vDa-oU-COy" eventType="valueChanged" id="zoj-SJ-eWe"/>
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
@@ -120,7 +120,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OSG-5X-6dw">
                                         <rect key="frame" x="11.5" y="108.5" width="375" height="59.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prefers Scrolling Expands When Scrolled To Edge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ogf-9U-XAn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prefers Scrolling Expands When Scrolled To Edge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" autoshrinkMode="minimumScaleFactor" translatesAutoresizingMaskIntoConstraints="NO" id="Ogf-9U-XAn">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -137,7 +137,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Pd-Rt-sI9">
                                         <rect key="frame" x="14.5" y="217" width="369" height="59.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prefers Edge Attached Image In Compact Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="44y-lJ-dqo">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prefers Edge Attached Image In Compact Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" autoshrinkMode="minimumScaleFactor" translatesAutoresizingMaskIntoConstraints="NO" id="44y-lJ-dqo">
                                                 <rect key="frame" x="0.0" y="0.0" width="369" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -154,7 +154,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zkz-h9-Txp">
                                         <rect key="frame" x="0.0" y="325.5" width="398" height="59.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Width Follows Preferred Content Size When Edge Attached" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a9a-BW-0AB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Width Follows Preferred Content Size When Edge Attached" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" autoshrinkMode="minimumScaleFactor" translatesAutoresizingMaskIntoConstraints="NO" id="a9a-BW-0AB">
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -180,9 +180,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="largestUndimmedDetentIdentifierControl" destination="yKr-DJ-cFC" id="Ojy-5i-IRS"/>
                         <outlet property="prefersEdgeAttachedInCompactHeightSwitch" destination="E8f-wm-BPF" id="alv-x1-sVk"/>
                         <outlet property="prefersScrollingExpandsWhenScrolledToEdgeSwitch" destination="i9T-9f-X2h" id="Cha-CX-O4r"/>
-                        <outlet property="smallestUndimmedDetentIdentifierControl" destination="yKr-DJ-cFC" id="Ojy-5i-IRS"/>
                         <outlet property="widthFollowsPreferredContentSizeWhenEdgeAttachedSwitch" destination="co7-m4-DZh" id="r6C-GB-2VD"/>
                     </connections>
                 </viewController>

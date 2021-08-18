@@ -9,15 +9,15 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet weak var smallestUndimmedDetentIdentifierControl: UISegmentedControl!
+    @IBOutlet weak var largestUndimmedDetentIdentifierControl: UISegmentedControl!
     @IBOutlet weak var prefersScrollingExpandsWhenScrolledToEdgeSwitch: UISwitch!
     @IBOutlet weak var prefersEdgeAttachedInCompactHeightSwitch: UISwitch!
     @IBOutlet weak var widthFollowsPreferredContentSizeWhenEdgeAttachedSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        smallestUndimmedDetentIdentifierControl.selectedSegmentIndex =
-        PresentationHelper.sharedInstance.smallestUndimmedDetentIdentifier == .medium ?
+        largestUndimmedDetentIdentifierControl.selectedSegmentIndex =
+        PresentationHelper.sharedInstance.largestUndimmedDetentIdentifier == .medium ?
         0 : 1
         
         prefersScrollingExpandsWhenScrolledToEdgeSwitch.isOn =
@@ -30,8 +30,8 @@ class SettingsViewController: UIViewController {
         PresentationHelper.sharedInstance.widthFollowsPreferredContentSizeWhenEdgeAttached
     }
     
-    @IBAction func smallestUndimmedDetentChanged(_ sender: UISegmentedControl) {
-        PresentationHelper.sharedInstance.smallestUndimmedDetentIdentifier = sender.selectedSegmentIndex == 0 ?
+    @IBAction func largestUndimmedDetentChanged(_ sender: UISegmentedControl) {
+        PresentationHelper.sharedInstance.largestUndimmedDetentIdentifier = sender.selectedSegmentIndex == 0 ?
             .medium : .large
     }
     

@@ -44,8 +44,8 @@ class ViewController: UIViewController,
                 
                 let sheet = popover.adaptiveSheetPresentationController
                 sheet.detents = [.medium(), .large()]
-                sheet.smallestUndimmedDetentIdentifier =
-                PresentationHelper.sharedInstance.smallestUndimmedDetentIdentifier
+                sheet.largestUndimmedDetentIdentifier =
+                PresentationHelper.sharedInstance.largestUndimmedDetentIdentifier
                 sheet.prefersScrollingExpandsWhenScrolledToEdge =
                 PresentationHelper.sharedInstance.prefersScrollingExpandsWhenScrolledToEdge
                 sheet.prefersEdgeAttachedInCompactHeight =
@@ -78,7 +78,7 @@ class ViewController: UIViewController,
             
             let sheet = popover.adaptiveSheetPresentationController
             sheet.detents = [.medium(), .large()]
-            sheet.smallestUndimmedDetentIdentifier = .medium
+            sheet.largestUndimmedDetentIdentifier = .medium
             sheet.prefersScrollingExpandsWhenScrolledToEdge =
             PresentationHelper.sharedInstance.prefersScrollingExpandsWhenScrolledToEdge
             sheet.prefersEdgeAttachedInCompactHeight =
@@ -132,8 +132,8 @@ class ViewController: UIViewController,
             
             let sheet = popover.adaptiveSheetPresentationController
             sheet.detents = [.medium(), .large()]
-            sheet.smallestUndimmedDetentIdentifier =
-            PresentationHelper.sharedInstance.smallestUndimmedDetentIdentifier
+            sheet.largestUndimmedDetentIdentifier =
+            PresentationHelper.sharedInstance.largestUndimmedDetentIdentifier
             sheet.prefersScrollingExpandsWhenScrolledToEdge =
             PresentationHelper.sharedInstance.prefersScrollingExpandsWhenScrolledToEdge
             sheet.prefersEdgeAttachedInCompactHeight =
