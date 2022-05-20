@@ -7,6 +7,10 @@ A helper class for injecting presentation settings.
 
 import UIKit
 
+extension UISheetPresentationController.Detent.Identifier {
+    static let small = UISheetPresentationController.Detent.Identifier("small")
+}
+
 class PresentationHelper {
     
     static let sharedInstance = PresentationHelper()

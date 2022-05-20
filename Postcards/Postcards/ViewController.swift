@@ -37,13 +37,22 @@ class ViewController: UIViewController,
             return
         }
         
-        if let settingsViewController = self.storyboard?.instantiateViewController(withIdentifier: "settings") {
+        if let settingsViewController = self.storyboard?.instantiateViewController(withIdentifier: "settings") as? SettingsViewController {
             settingsViewController.modalPresentationStyle = .popover
             if let popover = settingsViewController.popoverPresentationController {
                 popover.barButtonItem = sender
                 
                 let sheet = popover.adaptiveSheetPresentationController
-                sheet.detents = [.medium(), .large()]
+                sheet.detents = [
+                    .custom(identifier: .small) { context in
+                        0.3 * context.maximumDetentValue
+                    },
+                    .medium(),
+                    .large()
+                ]
+                sheet.prefersGrabberVisible = true
+                // This only applies to the Settings View Controller.
+                // Custom Detents are unavailable on Remote View Controllers.
                 sheet.largestUndimmedDetentIdentifier =
                 PresentationHelper.sharedInstance.largestUndimmedDetentIdentifier
                 sheet.prefersScrollingExpandsWhenScrolledToEdge =
@@ -132,8 +141,7 @@ class ViewController: UIViewController,
             
             let sheet = popover.adaptiveSheetPresentationController
             sheet.detents = [.medium(), .large()]
-            sheet.largestUndimmedDetentIdentifier =
-            PresentationHelper.sharedInstance.largestUndimmedDetentIdentifier
+            sheet.largestUndimmedDetentIdentifier = .medium
             sheet.prefersScrollingExpandsWhenScrolledToEdge =
             PresentationHelper.sharedInstance.prefersScrollingExpandsWhenScrolledToEdge
             sheet.prefersEdgeAttachedInCompactHeight =
@@ -183,7 +191,7 @@ class ViewController: UIViewController,
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         super.dismiss(animated: flag, completion: completion)
-        // Reset the inputView each time we dismiss a view controller.
+        // Reset the inputView each time when dismissing a view controller.
         self.textView.inputView = nil
         self.textView.reloadInputViews()
     }
