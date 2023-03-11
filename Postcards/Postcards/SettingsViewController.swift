@@ -7,8 +7,9 @@ The view controller that displays options for presenting sheets.
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var largestUndimmedDetentIdentifierControl: UISegmentedControl!
     @IBOutlet weak var prefersScrollingExpandsWhenScrolledToEdgeSwitch: UISwitch!
     @IBOutlet weak var prefersEdgeAttachedInCompactHeightSwitch: UISwitch!
@@ -26,8 +27,7 @@ class SettingsViewController: UIViewController {
         default:
             selectedSegmentIndex = 2
         }
-        largestUndimmedDetentIdentifierControl.selectedSegmentIndex = selectedSegmentIndex
-        
+    
         prefersScrollingExpandsWhenScrolledToEdgeSwitch.isOn =
         PresentationHelper.sharedInstance.prefersScrollingExpandsWhenScrolledToEdge
         
@@ -36,7 +36,38 @@ class SettingsViewController: UIViewController {
         
         widthFollowsPreferredContentSizeWhenEdgeAttachedSwitch.isOn =
         PresentationHelper.sharedInstance.widthFollowsPreferredContentSizeWhenEdgeAttached
+        
+        // Set the delegate and datasource to the view controller
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 44 // or any other value that you prefer
+        // Register a cell for the table view
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+  
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+         return 1
+     }
+     
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         return 100
+     }
+     
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+         
+         // Set the text of the cell
+         cell.textLabel?.text = "Row \(indexPath.row + 1)"
+         
+         return cell
+     }
+     
+     // MARK: - UITableViewDelegate
+     
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         print("Selected row \(indexPath.row + 1)")
+     }
     
     @IBAction func largestUndimmedDetentChanged(_ sender: UISegmentedControl) {
         let largestUndimmedDetentIdentifier: UISheetPresentationController.Detent.Identifier
